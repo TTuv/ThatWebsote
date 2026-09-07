@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if (!Model.IsAuthenticated)
+{
+    <div style="display:flex;align-items:center;justify-content:center;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;">
+        <div style="background:white;padding:24px;border-radius:8px;min-width:320px;">
+            <h3 style="margin-top:0;margin-bottom:16px;">Enter password</h3>
+            <form method="post" asp-page-handler="ValidatePassword" style="display:flex;flex-direction:column;gap:12px;">
+                <input type="password" name="password" placeholder="Password" style="padding:8px;border:1px solid #ccc;border-radius:4px;" required />
+                <button type="submit" style="padding:8px 12px;background:#007bff;color:white;border:none;border-radius:4px;cursor:pointer;">Submit</button>
+                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                {
+                    <div style="color:#b00020;font-size:14px;">@Model.ErrorMessage</div>
+                }
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-start">
+        <h1 class="display-4">Welcome</h1>
+
+        <p>My Greeting to you, the 10/10, whom I met on 10/10.</p>
+        
+        <p> Beyond praise, beyond everything else, as I'm writing this, I'm fully aware that the chances of you actually opening this link are infinitesimal, nearly nonexistent. I know how cautious you are. Yet for that small possibility, I'm laying everything bare.</p>
+
+        <p>You'd be astonished at how desperately I've wanted to ask you a genuine "how are you?" not the empty kind. I want to know how you're really feeling, what you're doing, if you're okay, if you need anything.</p>
+
+        <p>Although I resent that a beautiful label in your lunch box has been replaced by a bunch of keys, I am still captured by the sparks of your eyes and that presence I don't seem to have enough of. It's that thing that makes me dread Thursdays.</p>
+
+        <p>I can't find words adequate enough to describe what I see in you. You're simply exceptional. But since I have more freedom here, let me answer a question you might be asking yourself: given how little we've actually interacted, our conversations have been sparse, almost nonexistent, how did I reach this conclusion about you?</p>
+
+        <p>It goes back four years. I saw you on 10/10, and something struck me immediately. Your beauty was undeniable, but it was more than that, it was how you moved, how you spoke, the way you carried yourself and still do. That moment laid the foundation. Everything since then has only reinforced it. Four whole years of observation. The details are endless. I'd have to be blind to not realize what's in front of me after all this time. Your qualities aren't abstractions, they're tangible, real, evident in everything you do.</p>
+
+        <p>We're still in single sided monologue, it looks like other emails for now, this is just a platform to convey my messages to you, it will only grow in complexity capabilities with time, and I am cautious that your name is not spelled "Maryam", in the world of internet you don't have complete freedom over what you can name your website and this simple wordplay that I made was already hard enough to reserve, but I realized that it would've made a very nice name for your small business in which I sincerely wish you all the luck, success and prosperity. To me this place hopefully evolves to a rich book of memory online, how many people get to have this ?, fingers crossed.</p>
+
+        <p>That is one post, and one question. For sure, there are a lot more my chest and there is a lot to answer, far more I could tell you about those four years and our daily, but let me close this message for now. I wish you a great day, lovely Mariem.</p>
+
+
+        
+        <p>Light</p>
+
+    </div>
+}
